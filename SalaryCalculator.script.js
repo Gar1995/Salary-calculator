@@ -75,22 +75,22 @@ document.querySelector('#intro-btn-next').addEventListener('click', ()=> {
 
 
 // Code for swiping/ need to test and check
-let touchstartX = 0
-let touchendX = 0
+// let touchstartX = 0
+// let touchendX = 0
 
-function checkDirection() {
-    if (touchendX < touchstartX) alert('swiped left!')
-    if (touchendX > touchstartX) alert('swiped right!')
-}
+// function checkDirection() {
+//     if (touchendX < touchstartX) alert('swiped left!')
+//     if (touchendX > touchstartX) alert('swiped right!')
+// }
 
-document.addEventListener('touchstart', e => {
-    touchstartX = e.changedTouches[0].screenX
-})
+// document.addEventListener('touchstart', e => {
+//     touchstartX = e.changedTouches[0].screenX
+// })
 
-document.addEventListener('touchend', e => {
-    touchendX = e.changedTouches[0].screenX
-    checkDirection()
-})
+// document.addEventListener('touchend', e => {
+//     touchendX = e.changedTouches[0].screenX
+//     checkDirection()
+// })
 
 // -----------------------------------------------
 const getName = () => {
