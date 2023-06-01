@@ -1,0 +1,600 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Snippet - GoSNippets</title>
+    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css' rel='stylesheet'>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js'></script>
+    <script type='text/javascript' src='https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js'></script>
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/math-percent.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/97f7bc6eaf.js" crossorigin="anonymous"></script>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel="stylesheet" href="./SalaryStyles.css">
+</head>
+
+<body>
+    <div id="wrapper">
+        <!-- Mobile responsive -->
+        <section id="welcome" class="">
+            <div class="intro intro-btn-1" id="welcome-container">
+                <img src="./vectors/Manage money-pana-pink.svg" alt="" class="intro-vector">
+                <!-- <a href="https://storyset.com/people">People illustrations by Storyset</a> -->
+                <h2>Բարև</h2>
+                <span>Սույն հավելվածով կարող ես հաշվել աշխատավարձդ, պահվող տոկոսները, ինչպես նաև ստանալ աշխատանքին
+                    վերաբերող այլ տեղեկություններ։</span>
+
+            </div>
+            <div class="intro intro-btn-2 hidden">
+                <img src="./vectors/Top up credit-rafiki.svg" alt="" class="intro-vector">
+                <!-- <a href="https://storyset.com/people">People illustrations by Storyset</a> -->
+                <h2>Պարզ և հասկանալի ինտերֆեյս</h2>
+                <span>Ծրագիրը գրված է առավելագույնս պարզ և հասկանալի։ Գործողությունների մինիմալ և պարզեցված համակարգ։
+                    1-2-3 և դուք կստանաք ձեր աշխատավարձի մասին ձեզ անհրաժեշտ տեղեկությունը։
+                </span>
+            </div>
+            <div class="intro intro-btn-3 hidden">
+                <img src="./vectors/3500305.jpg" alt="" class="intro-vector">
+                <!-- <a href="https://storyset.com/people">People illustrations by Storyset</a> -->
+                <h2>Տեղեկատվություն հերթափոխի մասին</h2>
+                <span>Ընտրեք և ստացեք հավելյալ տեղեկություններ տվյալ հերթափոխի մենեջերական կազմի և աշխատանքային օրերի
+                    վերաբերյալ։</span>
+            </div>
+            <div class="intro intro-btn-4 hidden">
+                <img src="./vectors/taxes.png" alt="" class="intro-vector">
+                <!-- <a href="https://storyset.com/people">People illustrations by Storyset</a> -->
+                <h2>Տեղեկատվություն պահումների մասին</h2>
+                <span> Ձեր աշխատավարձից կատարվող պահումների մասին մանրամասն տեղեկություն։ Ինչպիսի պահումներ են արվում և
+                    ինչ սկզբունքով։ ։</span>
+            </div>
+            <!-- intro-navigation -->
+            <div id="intro-nav">
+                <div id="intro-nav-btns-container">
+                    <button class="intro-nav-btn" id="intro-btn-next">Հաջորդ
+                        <img src="./icons/right-chevron-arrow-round-outline-icon.png" alt="" class="intro-nav-icon">
+                    </button>
+                    <button class="intro-nav-btn hidden" id="intro-btn-prev">
+                        <img src="./icons/left-chevron-arrow-round-outline-icon.png" alt="" class="intro-nav-icon">
+                        Նախորդ
+                    </button>
+                </div>
+                <!-- pagination -->
+                <div id="pagination">
+                    <span></span>
+                    <span class="pgn-btn pgn-btn-1 active">1</span>
+                    <span class="pgn-btn pgn-btn-2">2</span>
+                    <span class="pgn-btn pgn-btn-3">3</span>
+                    <span class="pgn-btn pgn-btn-4">4</span>
+                    <span></span>
+                </div>
+            </div>
+        </section>
+        <section id="user-info" class="hidden">
+            <div class="container-start-btn user-info-container">
+                <img src="./vectors/21207-removebg-preview.png" alt="avatar" class="user-avatar">
+            </div>
+            <div class="name">
+                <input id="name-value" required type="text" placeholder="Ձեր անունը">
+                <label>Հյուր ջան</label>
+            </div>
+            <button type="submit" class="button btn-start" onclick="getName()">
+                <span>Առաջ</span>
+            </button>
+        </section>
+        <section id="select-mode" class="hidden">
+            <div id="select-mode-container">
+                <h5><span id="name-span"></span><span>ջան ընտրիր տարբերակը</span></h5>
+                <span id="mode-info"><img src="./icons/info-information-icon.png" alt=""></span>
+                <div id="mode-container">
+                    <div class="salary-mode" id="half-salary">
+                        <span class="salary-mode-name">Տարբերակ 1
+                            <pre>1-15 օր</pre>
+                        </span>
+                        <span class="switch">
+                            <input class="mode-checkbox" id="switch-round_1" type="radio" name="mode"
+                                onclick="getStat()">
+                            <label for="switch-round_1" id=""></label>
+                        </span>
+
+                        <img src="./icons/information-date-calendar-icon.png" alt="" class="mode-icon">
+                        <img src="./vectors/half-salary.gif" alt="" class="salary-mode-img">
+                    </div>
+                    <div class="salary-mode" id="full-salary">
+                        <span class="salary-mode-name">Տարբերակ 2
+                            <pre>1-30 օր</pre>
+                        </span>
+                        <span class="switch">
+                            <input class="mode-checkbox" id="switch-round_2" type="radio" name="mode"
+                                onclick="getStat()">
+                            <label for="switch-round_2" id=""></label>
+                        </span>
+
+                        <img src="./icons/information-date-calendar-icon.png" alt="" class="mode-icon">
+                        <img src="./vectors/full-salary.gif" alt="" class="salary-mode-img">
+                    </div>
+                </div>
+            </div>
+            <div id="info-message-container" class="info-message-modal hidden">
+                <h5>Ի՞նչ է տարբերակը</h5>
+                <div>
+                    <img src="" alt="">
+                    <span>Քանի որ 1 ամսվա աշխատավարձը ստանում ենք 2 անգամ (ամսի 7-ին և ամսի 22-ին) հետևաբար տարբեր
+                        պահումներ են արվում։
+
+                </div>
+                <div>
+                    <span>Ընտրելով առաջին տարբերակը դուք կարող եք հաշվել 15 աշխատանքային օրվա ձեր աշխատավարձը
+                        (համապատասխանաբար ամսի 1-ից 15-ի համար, որը ստանում ենք ամսի 22-ին և ամսի 16-30(1)-ի համար, որը
+                        ստանում ենք հաջորդ ամսվա 7-ին):</span>
+                    <img src="" alt="">
+                </div>
+                <div>
+                    <img src="" alt="">
+                    <span>Ընտրելով 2-րդ տարբերակը դուք կարող եք հաշվել ամբողջ ամսվա աշխատավարձը (համապատասխանաբար 2
+                        աշխատավարձերի գումարը, պահումները, մաքուր և կեղտոտ աշխատավարձերը):</span>
+                </div>
+                <div>
+                    <img src="./icons/left-arrow-button-icon — копия.png" alt="" class="mode-back-icon" id="back-icon">
+                    <img src="./icons/information-mark-circle-outline-icon.png" alt="" class="mode-back-icon" id="info">
+                </div>
+            </div>
+            <div class="overlay hidden"></div>
+            <button id="btn-to-main-menu" onclick="toMainMenu()">
+                Առաջ <img id="icon" src="./icons/right-chevron-arrow-round-outline-icon.png" alt="">
+            </button>
+        </section>
+        <main class="hidden">
+
+            <header class="">
+                <div id="user-info-container">
+                    <img id="logo" src="./icons/profile.png" alt="">
+                </div>
+                <aside id="sidebar">
+                    <img src="./icons/menu (1).png" alt="" class="nav-icon" id="sidebar-menu-btn">
+                </aside>
+
+            </header>
+            <section id="extra-info-container" class="">
+                <div id="info-for-user" class="half-container">
+                    <div id="welcome-message">
+                        Բարի <span id="day-time-info"></span>
+                        <span id="user-name-info">Գարրի </span>ջան <span id="current-day-time">
+                            <img src="./icons/night.png" alt="" id="current-day-time-icon" style="width: 24px;">
+                        </span>
+                    </div>
+                    <div id="staff-container">
+                        <div id="manager-container" class="qarter">
+                            <span class="staff-header">հերթափոխի մենեջեր</span>
+                            <span id="manager-name">Կարապետ</span>
+                        </div>
+                        <div id="support-container" class="quarter">
+                            <span class="staff-header">Օգնական</span>
+                            <span id="support-name">Մերի</span>
+                        </div>
+                        <div id="superviser-container" class="quarter">
+                            <span class="staff-header">Սուպերվայզեր</span>
+                            <span id="superviser-name">Արման</span>
+                        </div>
+                    </div>
+                    <span id="date"></span>
+                </div>
+                <div id="schedule" class="half-container">
+                    <div id="week-container">
+                        <div class="date-container">
+                            <span class="day">1</span>
+                            <span class="weekday">երկ</span>
+                        </div>
+                        <div class="date-container">
+                            <span class="day">2</span>
+                            <span class="weekday">երք</span>
+                        </div>
+                        <div class="date-container">
+                            <span class="day">3</span>
+                            <span class="weekday">չոր</span>
+                        </div>
+                        <div class="date-container">
+                            <span class="day">4</span>
+                            <span class="weekday">հնգ</span>
+                        </div>
+                        <div class="date-container">
+                            <span class="day">5</span>
+                            <span class="weekday">ուրբ</span>
+                        </div>
+                        <div class="date-container">
+                            <span class="day">6</span>
+                            <span class="weekday">շբթ</span>
+                        </div>
+                        <div class="date-container">
+                            <span class="day">7</span>
+                            <span class="weekday">կիր</span>
+                        </div>
+                    </div>
+                    <div id="shift-info">
+                        <div id="morning" class="shift">
+                            <div class="current-shift-date">
+                                <img src="./icons/direction_right_icon-yellow.png" alt="arrow-right-yellow"
+                                    class="arrow" width="30px">
+                                <div class="shift-day-container">
+                                    <span>ուրբ</span>
+                                    <span>5</span>
+                                </div>
+                            </div>
+                            <div class="shift-name">
+                                <span>Առավոտյան<br>հերթափոխ</span>
+                            </div>
+                            <div class="shift-starting-container">
+                                <span class="start">Սկիզբ</span>
+                                <span class="starting-time">08։15</span>
+                            </div>
+                            <div class="shift-ending-container">
+                                <span class="end">Ավարտ</span>
+                                <span class="ending-time">06։15</span>
+                            </div>
+                            <div class="shift-amount-container">
+                                <span class="shift-amount-name">հերթափոխի քանակ</span>
+                                <span class="shift-amount">3</span>
+                            </div>
+                        </div>
+                        <div id="middle" class="shift">
+                            <div class="current-shift-date">
+                                <img src="./icons/direction_right_icon-green.png" alt="arrow-right-green" class="arrow"
+                                    width="30px">
+                                <div class="shift-day-container">
+                                    <span>շբթ</span>
+                                    <span>6</span>
+                                </div>
+                            </div>
+                            <div class="shift-name">
+                                <span>Երեկոյան<br>հերթափոխ</span>
+                            </div>
+                            <div class="shift-starting-container">
+                                <span class="start">Սկիզբ</span>
+                                <span class="starting-time">16։15</span>
+                            </div>
+                            <div class="shift-ending-container">
+                                <span class="end">Ավարտ</span>
+                                <span class="ending-time">00։15</span>
+                            </div>
+                            <div class="shift-amount-container">
+                                <span class="shift-amount-name">հերթափոխի քանակ</span>
+                                <span class="shift-amount">3</span>
+                            </div>
+                        </div>
+                        <div id="night" class="shift">
+                            <div class="current-shift-date">
+                                <img src="./icons/direction_right_icon-olive.png" alt="arrow-right-olive" class="arrow"
+                                    width="30px">
+                                <div class="shift-day-container">
+                                    <span>կիր</span>
+                                    <span>7</span>
+                                </div>
+                            </div>
+                            <div class="shift-name">
+                                <span>Գիշերային<br>հերթափոխ</span>
+                            </div>
+                            <div class="shift-starting-container">
+                                <span class="start">Սկիզբ</span>
+                                <span class="starting-time">00։15</span>
+                            </div>
+                            <div class="shift-ending-container">
+                                <span class="end">Ավարտ</span>
+                                <span class="ending-time">08։15</span>
+                            </div>
+                            <div class="shift-amount-container">
+                                <span class="shift-amount-name">հերթափոխի քանակ</span>
+                                <span class="shift-amount">2</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div id="switch-day-night"></div> -->
+            </section>
+            <section id="main-body" class="">
+                <section id="shift-cards-container">
+                    <!-- card 1 -->
+                    <div class="post-card" id="card-1">
+                        <div class="card-head">
+                            <div class="card-amount">
+                                <input type="number" class="count" name="qty" value="0">
+                            </div>
+                            <div class="avatar-container">
+                                <img src="./icons/sun (1).png" alt="" class="avatar">
+                            </div>
+                            <!-- checkbox -->
+                            <div class="checkbox-wrapper-12">
+                                <div class="cbx">
+                                    <input id="cbx-12" type="checkbox">
+                                    <label for="cbx-12"></label>
+                                    <svg width="15" height="14" viewBox="0 0 15 14" fill="none">
+                                        <path d="M2 8.36364L6.23077 12L13 2"></path>
+                                    </svg>
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                                    <defs>
+                                        <filter id="goo-12">
+                                            <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur">
+                                            </feGaussianBlur>
+                                            <feColorMatrix in="blur" mode="matrix"
+                                                values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 22 -7" result="goo-12">
+                                            </feColorMatrix>
+                                            <feBlend in="SourceGraphic" in2="goo-12"></feBlend>
+                                        </filter>
+                                    </defs>
+                                </svg>
+                            </div>
+                        </div>
+                        <a class="title" href="#">Առավոտյան</a>
+                        <div class="card-details image-preview">
+                            <div>
+                                <img src="./icons/clock.png" alt="" class="card-details-icon">
+                                <span class="card-details"> 08։15-16։15</span>
+                            </div>
+                            <div>
+                                <img src="./icons/money-bag-dollar-color-icon.png" alt="" class="card-details-icon">
+                                <span class="card-details">12.500 դր</span>
+                            </div>
+                        </div>
+
+                        <div class="days-count-container">
+                            <div class="input-container">
+                                <span class="minus bg-dark">-</span>
+                                <span class="plus bg-dark">+</span>
+                            </div>
+                            <div class="card-arrow">
+                                <svg id="arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                    <path fill="#fff"
+                                        d="M13.4697 17.9697C13.1768 18.2626 13.1768 18.7374 13.4697 19.0303C13.7626 19.3232 14.2374 19.3232 14.5303 19.0303L20.3232 13.2374C21.0066 12.554 21.0066 11.446 20.3232 10.7626L14.5303 4.96967C14.2374 4.67678 13.7626 4.67678 13.4697 4.96967C13.1768 5.26256 13.1768 5.73744 13.4697 6.03033L18.6893 11.25H4C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75H18.6893L13.4697 17.9697Z">
+                                    </path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- card 2 -->
+                    <div class="post-card" id="card-2">
+                        <div class="card-head">
+                            <div class="card-amount">
+                                <input type="number" class="count" name="qty" value="0">
+                            </div>
+                            <div class="avatar-container">
+                                <img src="./icons/sea.png" alt="" class="avatar">
+                            </div>
+                            <!-- checkbox -->
+                            <div class="checkbox-wrapper-12">
+                                <div class="cbx">
+                                    <input id="cbx-12" type="checkbox">
+                                    <label for="cbx-12"></label>
+                                    <svg width="15" height="14" viewBox="0 0 15 14" fill="none">
+                                        <path d="M2 8.36364L6.23077 12L13 2"></path>
+                                    </svg>
+                                </div>
+
+                                <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                                    <defs>
+                                        <filter id="goo-12">
+                                            <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur">
+                                            </feGaussianBlur>
+                                            <feColorMatrix in="blur" mode="matrix"
+                                                values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 22 -7" result="goo-12">
+                                            </feColorMatrix>
+                                            <feBlend in="SourceGraphic" in2="goo-12"></feBlend>
+                                        </filter>
+                                    </defs>
+                                </svg>
+                            </div>
+                        </div>
+                        <a class="title" href="#">Երեկոյան</a>
+
+                        <div class="card-details image-preview">
+                            <div>
+                                <img src="./icons/clock.png" alt="" class="card-details-icon">
+                                <span class="card-details"> 16։15-00։15</span>
+                            </div>
+                            <div>
+                                <img src="./icons/money-bag-dollar-color-icon.png" alt="" class="card-details-icon">
+                                <span class="card-details">12.500 դր</span>
+                            </div>
+                        </div>
+
+                        <div class="days-count-container">
+                            <div class="input-container">
+                                <span class="minus bg-dark">-</span>
+                                <span class="plus bg-dark">+</span>
+                            </div>
+                            <div class="card-arrow">
+                                <svg id="arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                    <path fill="#fff"
+                                        d="M13.4697 17.9697C13.1768 18.2626 13.1768 18.7374 13.4697 19.0303C13.7626 19.3232 14.2374 19.3232 14.5303 19.0303L20.3232 13.2374C21.0066 12.554 21.0066 11.446 20.3232 10.7626L14.5303 4.96967C14.2374 4.67678 13.7626 4.67678 13.4697 4.96967C13.1768 5.26256 13.1768 5.73744 13.4697 6.03033L18.6893 11.25H4C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75H18.6893L13.4697 17.9697Z">
+                                    </path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- card 3 -->
+                    <div class="post-card" id="card-3">
+                        <div class="card-head">
+                            <div class="card-amount">
+                                <input type="number" class="count" name="qty" value="0">
+                            </div>
+                            <div class="avatar-container">
+                                <img src="./icons/moon.png" alt="" class="avatar">
+                            </div>
+                            <!-- checkbox -->
+                            <div class=" checkbox-wrapper-12">
+                                <div class="cbx">
+                                    <input id="cbx-12" type="checkbox">
+                                    <label for="cbx-12"></label>
+                                    <svg width="15" height="14" viewBox="0 0 15 14" fill="none">
+                                        <path d="M2 8.36364L6.23077 12L13 2"></path>
+                                    </svg>
+                                </div>
+
+                                <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                                    <defs>
+                                        <filter id="goo-12">
+                                            <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur">
+                                            </feGaussianBlur>
+                                            <feColorMatrix in="blur" mode="matrix"
+                                                values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 22 -7" result="goo-12">
+                                            </feColorMatrix>
+                                            <feBlend in="SourceGraphic" in2="goo-12"></feBlend>
+                                        </filter>
+                                    </defs>
+                                </svg>
+                            </div>
+                        </div>
+                        <a class="title" href="#">Գիշերային</a>
+                        <div class="card-details image-preview">
+                            <div>
+                                <img src="./icons/clock.png" alt="" class="card-details-icon">
+                                <span class="card-details"> 00։15-08։15</span>
+                            </div>
+                            <div>
+                                <img src="./icons/money-bag-dollar-color-icon.png" alt="" class="card-details-icon">
+                                <span class="card-details">16.600 դր</span>
+                            </div>
+                        </div>
+                        <div class="days-count-container">
+                            <div class="input-container">
+                                <span class="minus bg-dark">-</span>
+                                <span class="plus bg-dark">+</span>
+                            </div>
+                            <div class="card-arrow">
+                                <svg id="arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                    <path fill="#fff"
+                                        d="M13.4697 17.9697C13.1768 18.2626 13.1768 18.7374 13.4697 19.0303C13.7626 19.3232 14.2374 19.3232 14.5303 19.0303L20.3232 13.2374C21.0066 12.554 21.0066 11.446 20.3232 10.7626L14.5303 4.96967C14.2374 4.67678 13.7626 4.67678 13.4697 4.96967C13.1768 5.26256 13.1768 5.73744 13.4697 6.03033L18.6893 11.25H4C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75H18.6893L13.4697 17.9697Z">
+                                    </path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- calculation -->
+                <section id="calc-container" class="">
+                    <div class="calc-salary calc-container">
+                        <img src="./vectors/vector.png" alt="">
+                        <h6><span></span>ջան աշխատավարձդ կազմում է</h6>
+                        <span id="final-income-price">120000</span>
+                    </div>
+                    <div class="calc-taxes calc-container">
+                        <div class="worked-days calc-card">
+                            <div>
+                                <h6>Աշխատած օրեր</h6>
+                                <span id="worked-days">18</span>
+                            </div>
+                            <div class="calc-icon-container">
+                                <img src="./icons/calendar.png" alt="" class="calc-icon">
+                            </div>
+                        </div>
+                        <div class="taxes calc-card">
+                            <div>
+                                <h6>Պահումներ</h6>
+                                <span id="taxes">15000</span>
+                            </div>
+                            <div class="calc-icon-container">
+                                <img src="./icons/tax.png" alt="" class="calc-icon">
+                            </div>
+                        </div>
+                        <div class="extra-earnings calc-card">
+                            <div>
+                                <h6>Հավելյալ եկամուտներ</h6>
+                                <span id="kpi">69000</span>
+                            </div>
+                            <div class="calc-icon-container">
+                                <img src="./icons/money-bag-dollar-color-icon.png" alt="" class="calc-icon">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <button id="calculate"><img src="./icons/calculator.svg" alt="" class="calc-icon"> Հաշվել</button>
+
+            </section>
+            <section class="modal hidden">
+                <div class="flex">
+                    <button class="butn butn-close">X</button>
+                    <h5><span></span>ջան ընտրիր հերթափոխը և օրացույցի վրա կտեսնես քո աշխատանքային օրերը</h5>
+                    <label for="manager" id="">Ընտրիր հերթափոխի մենեջերին</label>
+                    <input type="radio" name="manager" id="manager-1">
+                    <input type="radio" name="manager" id="manager-2">
+                    <input type="radio" name="manager" id="manager-3">
+                    <input type="radio" name="manager" id="manager-4">
+                    <input type="radio" name="manager" id="manager-5">
+                    <button class="butn">Լավ</button>
+                </div>
+                <div class="overlay hidden"></div>
+            </section>
+            <nav class="">
+                <!-- shift -->
+                <label for="input-5">
+                    <input type="radio" id="input-5" name="group">
+                    <span class="btn">
+                        <span class="btn-icon">
+                            <img src="./icons/calendar-days.svg" class="nav-icon" alt="">
+                            <span class="btn-text">
+                                Հերթափոխ
+                            </span>
+                        </span>
+                    </span>
+                </label>
+                <!-- user information -->
+                <label for="input-2">
+                    <input type="radio" id="input-2" name="group">
+                    <span class="btn">
+                        <span class="btn-icon">
+                            <!-- <img src="./icons/business-users-icon.png" alt="" class="nav-icon"> -->
+                            <img src="./icons/comment-user.svg" class="nav-icon" alt="">
+                            <span class="btn-text">
+                                Օգտատեր
+                            </span>
+                        </span>
+                    </span>
+                </label>
+                <!-- home -->
+                <label for="input-3">
+                    <input type="radio" id="input-3" name="group">
+                    <span class="btn btn-home-span">
+                        <span class="">
+                            <img src="./icons/homepage-red-icon.png" class="btn-home" alt="">
+                        </span>
+                    </span>
+                </label>
+                <!-- extra -->
+                <label for="input-4">
+                    <input type="radio" id="input-4" name="group" class="nav-input">
+                    <span class="btn">
+                        <span class="btn-icon">
+                            <img src="./icons/stats.svg" alt="" class="nav-icon">
+                            <!-- <img src="./icons/growth-icon.png" alt="" class="nav-icon"> -->
+                            <!-- <img src="./icons/financial-icon-png-5767.png" alt="" class="nav-icon"> -->
+                            <span class="btn-text">
+                                Լրացուցիչ
+                            </span>
+                        </span>
+                    </span>
+                </label>
+                <!-- calculation details -->
+                <label for="input-1">
+                    <input type="radio" id="input-1" name="group">
+                    <span class="btn">
+                        <span class="btn-icon">
+                            <img src="./icons/tax-calculator-icon.png" alt="" class="nav-icon">
+                            <span class="btn-text">
+                                Հաշվարկ
+                            </span>
+                        </span>
+                    </span>
+                </label>
+            </nav>
+
+        </main>
+    </div>
+
+    <script src="./SalaryCalculator.script.js"></script>
+</body>
+
+</html>
