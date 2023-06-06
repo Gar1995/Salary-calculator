@@ -47,26 +47,23 @@ const navigateToNext = function () {
     document.querySelector('.pgn-btn-4').addEventListener('click', changeBtnContent)
 
 
-    // Code for swiping/ need to test and check
-    // let touchstartX = 0
-    // let touchendX = 0
+// Code for swiping/ need to test and check
+let touchstartX = 0
+let touchendX = 0
 
-    // function checkDirection() {
-    //     if (touchendX < touchstartX) alert('swiped left!')
-    //     if (touchendX > touchstartX) alert('swiped right!')
-    // }
-
-    // document.addEventListener('touchstart', e => {
-    //     touchstartX = e.changedTouches[0].screenX
-    // })
-
-    // document.addEventListener('touchend', e => {
-    //     touchendX = e.changedTouches[0].screenX
-    //     checkDirection()
-    // })
+function checkDirection() {
+    if (touchendX < touchstartX) alert('swiped left!')
+    if (touchendX > touchstartX) alert('swiped right!')
 }
-navigateToNext();
 
+document.addEventListener('touchstart', e => {
+    touchstartX = e.changedTouches[0].screenX
+})
+
+document.addEventListener('touchend', e => {
+    touchendX = e.changedTouches[0].screenX
+    checkDirection()
+})
 
 // -----------------------------------------------
 const getName = () => {
@@ -253,19 +250,18 @@ if (window.PointerEvent) {
 
 // card Check
 
-const cards = document.querySelectorAll('.post-card');
-const checkStatus = document.querySelectorAll('.cbx');
+// const cards = document.querySelectorAll('.post-card');
+// const checkStatus = document.querySelectorAll('.cbx');
 
 
-for (let i = 0; i < cards.length; i++) {
-    cards[i].addEventListener('click', () => {
-        let status = checkStatus[i].querySelector('input');
-        if (!status.checked) {
-            checkStatus[i].querySelector('input').checked = true;
-        } else if (status.checked) {
-            checkStatus[i].querySelector('input').checked = false;
-        }
-        // checkStatus[i].querySelector('input').checked = 'true';
-    })
-}
-
+// for (let i = 0; i < cards.length; i++) {
+//     cards[i].addEventListener('click', () => {
+//         let status = checkStatus[i].querySelector('input');
+//         if (!status.checked) {
+//             checkStatus[i].querySelector('input').checked = true;
+//         } else if (status.checked) {
+//             checkStatus[i].querySelector('input').checked = false;
+//         }
+//         // checkStatus[i].querySelector('input').checked = 'true';
+//     })
+// }
