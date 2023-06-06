@@ -1,96 +1,72 @@
-// 'use strict'
+'use strict'
 // Intro-page
-const btnNext = document.querySelector('#intro-btn-next');
-const btnPrev = document.querySelector('#intro-btn-prev');
-const paginationNumbers = document.querySelectorAll('.pgn-btn');
-const introPages = document.querySelector('#welcome').querySelectorAll('.intro');
+const navigateToNext = function () {
+    const btnNext = document.querySelector('#intro-btn-next');
+    const btnSkip = document.querySelector('#intro-btn-skip');
 
-// welcome page pagination switch to next
-// 
-// function paginationSwitchToNext () {
-for (let i = 0; i < paginationNumbers.length; i++) {
-    paginationNumbers[i].addEventListener('click', () => {
-        const btnActive = paginationNumbers[i];
-        // const introActive = introPages[i];
-        if (btnActive.classList.contains('active')) {
-            return false;
-        } else {
-            document.querySelector('.active').classList.remove('active');
-            btnActive.classList.add('active');
-        }
-        if (i > 0) {
-            btnPrev.classList.remove('hidden')
-        } else {
-            btnPrev.classList.add('hidden')
-        }
-    })
-}
-// }
-// paginationSwitchToNext()
 
-//synchronizing the pagination switching with intro page switching
-const introSwitchToNext = () => {
-    for (let j = 0; j < paginationNumbers.length; j++) {
-        const activeNumber = paginationNumbers[j];
-        activeNumber.addEventListener('click', () => {
-            for (let k = 0; k < introPages.length; k++) {
-                introPages[k].classList.add('hidden');
-            }
-            document.querySelector(`.intro-btn-${j + 1}`).classList.remove('hidden');
-        })
+    // skip button
+    const navToMainPage = () => {
+        document.getElementById("user-info").classList.remove('hidden');
+        document.querySelector('#welcome').classList.add('hidden')
     }
-}
 
-// const btnSwitchToNext = () => {
-//     const activeIntro = document.querySelector('.active').textContent;
-//     // if (activeIntro.textContent === 1) {
-//     document.querySelector(`.intro-btn-${+activeIntro + 1}`).classList.remove('hidden');
-//     document.querySelector(`.intro-btn-${activeIntro}`).classList.add('hidden');
-//     // }
-//     console.log(introSwitchToNext())
-// }
+    btnSkip.addEventListener('click', navToMainPage);
 
-// console.log(activePage);
+    // next button
+    // btnNext.addEventListener('click', ?)
 
 
-btnNext.addEventListener('click', introSwitchToNext());
-
-const changeBtnContent = () => {
-    const lastIntro = document.querySelector('.intro-btn-4')
-    const lastBtn = document.querySelector('.pgn-btn-4')
-    const btn = document.querySelector('#intro-btn-next')
-    console.log(lastBtn);
-    console.log(lastIntro);
-    if (!lastIntro.classList.contains('hidden') && lastBtn.classList.contains('active')) {
-        btn.textContent = 'Սկսել';
+    // welcome page intro and pagination switch to next
+    const introSwitchToNext = () => {
+        const paginationNumbers = document.querySelectorAll('.pgn-btn');
+        const introPages = document.querySelector('#welcome').querySelectorAll('.intro');
+        for (let i = 0; i < paginationNumbers.length; i++) {
+            const btnActive = paginationNumbers[i];
+            btnActive.addEventListener('click', () => {
+                if (btnActive.classList.contains('active') && !introPages[i].contains('hidden')) {
+                    return false;
+                } else {
+                    document.querySelector('.active').classList.remove('active');
+                    btnActive.classList.add('active');
+                    document.querySelector('.visible').classList.replace('visible', 'hidden');
+                    introPages[i].classList.replace('hidden', 'visible')
+                }
+            })
+        }
     }
-};
+    introSwitchToNext()
 
-document.querySelector('.pgn-btn-4').addEventListener('click',changeBtnContent )
+    const changeBtnContent = () => {
+        const lastBtn = document.querySelector('.pgn-btn-4')
+        if (lastBtn.classList.contains('active')) {
+            btnNext.textContent = 'Սկսել';
+            document.querySelector('#intro-btn-next').addEventListener('click', navToMainPage)
+        }
+    };
+    document.querySelector('.pgn-btn-4').addEventListener('click', changeBtnContent)
 
-document.querySelector('#intro-btn-next').addEventListener('click', ()=> {
-     document.getElementById("user-info").classList.remove('hidden');
-    document.querySelector('#welcome').classList.add('hidden')
-} )
 
+    // Code for swiping/ need to test and check
+    // let touchstartX = 0
+    // let touchendX = 0
 
-// Code for swiping/ need to test and check
-let touchstartX = 0
-let touchendX = 0
+    // function checkDirection() {
+    //     if (touchendX < touchstartX) alert('swiped left!')
+    //     if (touchendX > touchstartX) alert('swiped right!')
+    // }
 
-function checkDirection() {
-    if (touchendX < touchstartX) alert('swiped left!')
-    if (touchendX > touchstartX) alert('swiped right!')
+    // document.addEventListener('touchstart', e => {
+    //     touchstartX = e.changedTouches[0].screenX
+    // })
+
+    // document.addEventListener('touchend', e => {
+    //     touchendX = e.changedTouches[0].screenX
+    //     checkDirection()
+    // })
 }
+navigateToNext();
 
-document.addEventListener('touchstart', e => {
-    touchstartX = e.changedTouches[0].screenX
-})
-
-document.addEventListener('touchend', e => {
-    touchendX = e.changedTouches[0].screenX
-    checkDirection()
-})
 
 // -----------------------------------------------
 const getName = () => {
@@ -124,20 +100,22 @@ const getStat = () => {
 
 
 //  INFO MESSAGE MODAL
-const modal = document.querySelector('.info-message-modal');
-const overlay = document.querySelector('.overlay');
-const btnClose = document.querySelector('#back-icon');
+const runModal = () => {
+    const modal = document.querySelector('.info-message-modal');
+    const overlay = document.querySelector('.overlay');
+    const btnClose = document.querySelector('#back-icon');
 
-document.querySelector("#mode-info").addEventListener('click', function () {
-    modal.classList.remove('hidden');
-    overlay.classList.remove('hidden');
-});
+    document.querySelector("#mode-info").addEventListener('click', function () {
+        modal.classList.remove('hidden');
+        overlay.classList.remove('hidden');
+    });
 
-btnClose.addEventListener('click', function () {
-    modal.classList.add('hidden');
-    overlay.classList.add('hidden');
-});
-
+    btnClose.addEventListener('click', function () {
+        modal.classList.add('hidden');
+        overlay.classList.add('hidden');
+    });
+}
+runModal()
 
 
 const toMainMenu = () => {
@@ -153,54 +131,56 @@ const toMainMenu = () => {
     }
 }
 
+// welcome message daytime selector
 const chooseDayTime = () => {
     const date = new Date();
     let currentTime = date.getHours();
 
-    if (currentTime >= 6 && currentTime < 12) {
-        document.querySelector('#day-time-info').textContent = 'առավոտ';
-    } else if (currentTime === 12) {
-        document.querySelector('#day-time-info').textContent = 'կեսօր';
-    } else if (currentTime > 12 && currentTime < 17) {
-        document.querySelector('#day-time-info').textContent = "օր";
-    } else if (currentTime >= 17 && currentTime <= 22) {
-        document.querySelector('#day-time-info').textContent = "երեկո";
-    } else if (currentTime > 22 || currentTime < 6) {
-        document.querySelector('#day-time-info').textContent = "ուշ գիշեր";
+    switch (currentTime) {
+        case currentTime >= 6 && currentTime < 12:
+            document.querySelector('#day-time-info').textContent = 'առավոտ';
+            break;
+        case currentTime === 12:
+            document.querySelector('#day-time-info').textContent = 'կեսօր';
+            break;
+        case currentTime > 12 && currentTime < 17:
+            document.querySelector('#day-time-info').textContent = "օր";
+            break
+        case currentTime >= 17 && currentTime <= 22:
+            document.querySelector('#day-time-info').textContent = "երեկո";
+            break
+        case currentTime > 22 || currentTime < 6:
+            document.querySelector('#day-time-info').textContent = "ուշ գիշեր";
     }
-} 
+}
 chooseDayTime()
 
-var dateTime = new Date().toDateString();
-document.querySelector("#date").textContent = dateTime;
+// welcome message time
+const runTime = () => {
+    var dateTime = new Date().toDateString();
+    document.querySelector("#date").textContent = dateTime;
 
-function refreshTime() {
-    const timeDisplay = document.querySelector("#date");
-    const dateString = new Date().toLocaleString();
-    const formattedString = dateString.replace(", ", " - ");
-    timeDisplay.textContent = formattedString;
+    function refreshTime() {
+        const timeDisplay = document.querySelector("#date");
+        const dateString = new Date().toLocaleString();
+        const formattedString = dateString.replace(", ", " - ");
+        timeDisplay.textContent = formattedString;
+    }
+    setInterval(refreshTime);
 }
-setInterval(refreshTime);
-
-// document.querySelector('#switch-morning').addEventListener('click', function () {
-//     const status = document.querySelector('#switch-morning');
-//     if (status.checked) {
-//         document.getElementsByClassName('card-check-status')[0].textContent = 'Ընտրված է';
-//     } else {
-//         document.getElementsByClassName('card-check-status')[0].textContent = '';
-
-//     }
-// });
+runTime()
 
 // card input number
 $(document).ready(function () {
     $('.count').prop('disabled', true);
+
     $(document).on('click', '.plus', function () {
         $('.count').val(parseInt($('.count').val()) + 1);
     });
 
     $(document).on('click', '.minus', function () {
         $('.count').val(parseInt($('.count').val()) - 1);
+
         if ($('.count').val() == 0) {
             $('.count').val(1);
         }
@@ -208,6 +188,43 @@ $(document).ready(function () {
 });
 
 
+// Carousel
+const track = document.querySelector(".track");
+let initialPosition = null;
+let moving = false;
+let transform = 0;
+
+const gestureStart = (e) => {
+    initialPosition = e.pageX;
+    moving = true;
+    const transformMatrix = window.getComputedStyle(track).getPropertyValue('transform');
+    console.log(transformMatrix);
+    if (transformMatrix !== 'none') {
+        // transform = parseInt(transformMatrix.split(','[4].trim()));
+        console.log(parseInt(Number(transformMatrix.split(',')[4].trim())));
+    }
+}
+
+const gestureMove = (e) => {
+    if (moving) {
+        const currentPosition = e.pageX;
+        const diff = currentPosition - initialPosition;
+        track.style.transform = `translateX(${transform + diff}px)`;
+    }
+};
+
+const gestureEnd = (e) => {
+    moving = false;
+}
+if (window.PointerEvent) {
+    window.addEventListener('pointerdown', gestureStart);
+    window.addEventListener('pointermove', gestureMove);
+    window.addEventListener('pointerup', gestureEnd);
+} else {
+    window.addEventListener('mousedown', gestureStart);
+    window.addEventListener('mousemove', gestureMove);
+    window.addEventListener('mouseup', gestureEnd);
+}
 
 
 
