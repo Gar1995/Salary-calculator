@@ -564,16 +564,16 @@
  /* User-information part / left */
 
  .half-container {
-     width: 50%;
+     width: 100%;
      /* border: solid rgb(40, 83, 41); */
      border-radius: 10px;
      margin: 0 5px;
-     background-color: #f0f5fb77;
+     background-color: #f0f5fb1f;
  }
 
  /* CAROUSEL------------ */
  .carousel {
-     height: 100vh;
+     height: 22vh;
      width: 100vw;
      position: relative;
      background: rgba(0, 0, 255, 0.26);
@@ -581,17 +581,18 @@
  }
 
  .carousel .track {
-     position: absolute;
+     /* position: absolute; */
+     width: 100%;
      top: 150px;
      left: 20px;
      display: inline-flex;
  }
 
-.carousel .track .half-container {
+.carousel .track {
     height: 300px;
-    width: 300px;
+    width: 100%;
     border-radius: 10px;
-    margin-left: 20px;
+    /* margin-left: 40px; */
 }
 
  #info-for-user {

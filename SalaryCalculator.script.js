@@ -46,24 +46,25 @@ const navigateToNext = function () {
     };
     document.querySelector('.pgn-btn-4').addEventListener('click', changeBtnContent)
 
-
-// Code for swiping/ need to test and check
-let touchstartX = 0
-let touchendX = 0
-
-function checkDirection() {
-    if (touchendX < touchstartX) alert('swiped left!')
-    if (touchendX > touchstartX) alert('swiped right!')
 }
+navigateToNext()
+// Code for swiping/ need to test and check
+// let touchstartX = 0
+// let touchendX = 0
 
-document.addEventListener('touchstart', e => {
-    touchstartX = e.changedTouches[0].screenX
-})
+// function checkDirection() {
+//     if (touchendX < touchstartX) alert('swiped left!')
+//     if (touchendX > touchstartX) alert('swiped right!')
+// }
 
-document.addEventListener('touchend', e => {
-    touchendX = e.changedTouches[0].screenX
-    checkDirection()
-})
+// document.addEventListener('touchstart', e => {
+//     touchstartX = e.changedTouches[0].screenX
+// })
+
+// document.addEventListener('touchend', e => {
+//     touchendX = e.changedTouches[0].screenX
+//     checkDirection()
+// })
 
 // -----------------------------------------------
 const getName = () => {
@@ -127,7 +128,7 @@ const toMainMenu = () => {
         chooseDayTime()
     }
 }
-
+toMainMenu()
 // welcome message daytime selector
 const chooseDayTime = () => {
     const date = new Date();
@@ -197,7 +198,6 @@ const gestureStart = (e) => {
     const transformMatrix = window.getComputedStyle(track).getPropertyValue('transform');
     console.log(transformMatrix);
     if (transformMatrix !== 'none') {
-        // transform = parseInt(transformMatrix.split(','[4].trim()));
         console.log(parseInt(Number(transformMatrix.split(',')[4].trim())));
     }
 }
@@ -222,9 +222,6 @@ if (window.PointerEvent) {
     window.addEventListener('mousemove', gestureMove);
     window.addEventListener('mouseup', gestureEnd);
 }
-
-
-
 
 
 // Modals
