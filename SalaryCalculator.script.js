@@ -168,23 +168,28 @@ const runTime = () => {
 }
 runTime()
 
-// card input number
-$(document).ready(function () {
-    $('.count').prop('disabled', true);
+const changeCardAmount = () => {
+    const cards = document.querySelectorAll('.post-card');
+    for (const card of cards) {
+        card.addEventListener('click', decreaseNum(card))
+        card.addEventListener('click', increaseNum(card))
+    }
 
-    $(document).on('click', '.plus', function () {
-        $('.count').val(parseInt($('.count').val()) + 1);
-    });
+    function decreaseNum(card) {
+        const btnMinus = card.querySelector('.minus');
+        btnMinus.addEventListener('click', () => {
+            card.querySelector('.count').value--;
+        })
+    }
 
-    $(document).on('click', '.minus', function () {
-        $('.count').val(parseInt($('.count').val()) - 1);
-
-        if ($('.count').val() == 0) {
-            $('.count').val(1);
-        }
-    });
-});
-
+    function increaseNum(card) {
+        const btnPlus = card.querySelector('.plus');
+        btnPlus.addEventListener('click', () => {
+            card.querySelector('.count').value++;
+        })
+    }
+}
+changeCardAmount()
 
 // Carousel
 const track = document.querySelector(".track");
@@ -196,9 +201,9 @@ const gestureStart = (e) => {
     initialPosition = e.pageX;
     moving = true;
     const transformMatrix = window.getComputedStyle(track).getPropertyValue('transform');
-    console.log(transformMatrix);
+    transformMatrix;
     if (transformMatrix !== 'none') {
-        console.log(parseInt(Number(transformMatrix.split(',')[4].trim())));
+        parseInt(Number(transformMatrix.split(',')[4].trim()));
     }
 }
 

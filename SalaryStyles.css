@@ -67,7 +67,7 @@
  /*----INTRO NAVIGATION--- */
  #intro-nav {
      position: absolute;
-     bottom: 0;
+     bottom: 4px;
      width: 100%;
      height: 3rem;
      display: flex;
@@ -482,23 +482,26 @@
  /*-------------------------- Page / 4 main menu------------------------------*/
  main {
      /* display: none; */
-     position: fixed;
+     /* position: fixed; */
      width: 100%;
-     height: 100%;
      display: flex;
      flex-direction: column;
-     justify-content: stretch;
+     /* justify-content: space-evenly; */
      align-items: center;
      background-color: #ece1d0;
+     /* border: solid red; */
      /* margin-bottom: 10px; */
  }
 
  header {
+     position: fixed;
+     top: 0;
      display: flex;
      justify-content: space-between;
      width: 100%;
      color: black;
-     /* z-index: 1; */
+     background-color: #fff;
+     z-index: 1;
 
  }
 
@@ -551,53 +554,74 @@
 
  /*------- extra info -------------------*/
  #extra-info-container {
-     display: flex;
+     /* position: relative; */
+     /* display: flex; */
      width: 100%;
+     /* height: 350px; */
      margin: 0.5rem;
+     margin-top: 300px;
      /* height: 5rem; */
      /* background-color: #F0F5FB; */
      font-size: 10px;
+     /* padding: 60px; */
      /* opacity: 0.8; */
      /* border-radius: 10px; */
+ }
+
+
+ /* CAROUSEL------------ */
+ .carousel {
+     /* height: 22vh; */
+     /* width: 150%; */
+     position: relative;
+     background-color: transparent;
+     overflow: hidden;
+     /* border: solid; */
+ }
+
+ .track {
+     width: 180%;
+     display: flex;
+ }
+
+ .carousel .track {
+     /* position: absolute; */
+     /* width: 100%; */
+     /* top: 150px; */
+     /* left: 20px; */
+
+ }
+
+ .carousel .track {
+     /* height: 350px; */
+     /* width: 100%; */
+     border-radius: 10px;
+     margin-left: 20px;
+     /* border: solid black; */
  }
 
  /* User-information part / left */
 
  .half-container {
-     width: 100%;
+     /* position: relative; */
      /* border: solid rgb(40, 83, 41); */
      border-radius: 10px;
      margin: 0 5px;
-     background-color: #f0f5fb1f;
+     box-sizing: content-box;
+     width: 90%;
+     background-color: #5d8a8e75;
  }
-
- /* CAROUSEL------------ */
- .carousel {
-     height: 22vh;
-     width: 100vw;
-     position: relative;
-     background: rgba(0, 0, 255, 0.26);
-     overflow: hidden;
- }
-
- .carousel .track {
-     /* position: absolute; */
-     width: 100%;
-     top: 150px;
-     left: 20px;
-     display: inline-flex;
- }
-
-.carousel .track {
-    height: 300px;
-    width: 100%;
-    border-radius: 10px;
-    /* margin-left: 40px; */
-}
 
  #info-for-user {
+     /* position: absolute; */
      display: flex;
      flex-direction: column;
+
+     z-index: +5;
+     /* border: solid black; */
+     /* width: 300px; */
+     box-sizing: content-box;
+
  }
 
  #staff-container {
@@ -626,7 +650,10 @@
  #schedule {
      display: flex;
      flex-direction: column;
+     background-color: #00865e;
      /* border: solid blueviolet; */
+     /* width: 600px; */
+     margin: 0 20px;
  }
 
  #week-container {
@@ -647,11 +674,13 @@
 
  #shift-info {
      display: flex;
+     width: 100%;
      flex-direction: column;
  }
 
  .shift {
      display: flex;
+     justify-content: space-evenly;
      border-radius: 10px;
      margin: 2px;
  }
@@ -705,8 +734,8 @@
      width: 100%;
      display: flex;
      flex-direction: column;
-     align-items: flex-end;
-     justify-content: center;
+     /* align-items: flex-end; */
+     /* justify-content: center; */
      /* background-image: url(./walp/modern-polygonal-technology-background_1035-7639.webp);
     background-size: 100% 100%;
     background-repeat: no-repeat; */
@@ -714,35 +743,35 @@
 
  /* main-menu (cards) */
  #shift-cards-container {
-
      display: flex;
-     /* flex-wrap: wrap; */
-     justify-content: space-evenly;
-     align-items: center;
+     flex-wrap: wrap;
+     /* justify-content: space-evenly; */
+     /* align-items: center; */
      /* height: 200px; */
      width: 100%;
-     background-color: #ffffffb5;
+     /* background-color: #ffffffb5; */
      /* background-image: url(./vectors/—Pngtree—digital\ technology\ blue\ geometric\ squares_2342604.png); */
      background-size: cover;
      background-position: center;
      background-repeat: no-repeat;
      border-radius: 15px;
      /* margin-top: 5rem;  */
-     padding-bottom: 0;
-     margin-bottom: 0;
+     /* padding-bottom: 0;
+     margin-bottom: 0; */
+     /* border: solid black; */
  }
 
  /* CARD READY To USE */
 
  .post-card {
-     width: 30%;
-     border-radius: 20px 5px 15px 5px;
+     width: 48%;
+     border-radius: 10px;
      display: flex;
      flex-direction: column;
      text-align: left;
-     padding: 5px 5px;
+     padding: 5px;
      font-style: italic;
-     margin: 10px 4px;
+     margin: 4px;
  }
 
  .image-preview {
@@ -808,8 +837,48 @@
      font-size: 20px;
  }
 
+ #card-4 {
+     position: relative;
+     width: 48%;
+     border-radius: 10px;
+     display: flex;
+     flex-direction: column;
+     text-align: left;
+     padding: 5px;
+     font-style: italic;
+     margin: 4px;
+     background-image: url(./vectors/tax-form-of-state-government-taxation-with-forms-calendar-audit-calculator-or-analysis-to-accounting-and-payment-in-flat-background-illustration_2175-3829.webp);
+     /* background-color: #2a2a2a; */
+     background-position: center;
+     background-size: 100% 100%;
+ }
+
+ .count {
+     width: 25px;
+     background-color: transparent;
+     background: transparent;
+     font-size: 20px;
+ }
+
+ .more-btn-container {
+     position: absolute;
+     right: 0.9rem;
+     bottom: 0.1rem;
+ }
+
+ .more-btn {
+     rotate: 90deg;
+     width: 6px;
+ }
+
+ .more-btn:hover {
+     cursor: pointer;
+ }
+
  .avatar {
-     width: 35px;
+     width: 3rem;
+     background-color: rgb(255, 255, 255);
+     border-radius: 50%;
  }
 
  .title {
@@ -828,10 +897,12 @@
      text-decoration: blueviolet;
  }
 
- .card-details {
-     font-size: 12px;
+ .card-details-container {
+     font-size: 14px;
      font-weight: 400;
      color: rgb(255, 255, 255);
+     background-color: #8b95917d;
+     border-radius: 10px;
  }
 
  /* Input number (days count) */
@@ -873,12 +944,21 @@
      text-align: center;
  }
 
+ .minus {
+     background-color: #2a2a2a;
+ }
+
+ .plus {
+     background-color: #29b05a;
+ }
+
  .minus:hover {
-     background-color: #717fe0 !important;
+     font-size: larger;
+     /* background-color: #717fe0 !important; */
  }
 
  .plus:hover {
-     background-color: #29b05a !important;
+     font-size: larger !important;
  }
 
  /*Prevent text selection*/
@@ -945,7 +1025,7 @@
      left: 0;
      width: 24px;
      height: 24px;
-     border: 2px solid #bfbfc0;
+     /* border: 2px solid #bfbfc0; */
      border-radius: 50%;
  }
 
@@ -1042,7 +1122,7 @@
      border-radius: 5px;
  }
 
- .card-details {
+ .card-details-container {
      display: flex;
      flex-direction: column;
      /* align-items: flex-start; */
@@ -1050,7 +1130,7 @@
 
  }
 
- .card-details div {
+ .card-details-container div {
      width: 100%;
      display: flex;
      justify-content: left;
@@ -1060,7 +1140,7 @@
  .card-details-icon {
      width: 24px;
      padding: 2px;
-     margin: 4px;
+     margin: 4px 4px 4px 1rem;
  }
 
  /* arrow button */
@@ -1074,8 +1154,8 @@
  }
 
  .card-arrow {
-     margin-right: -11px;
-     margin-bottom: -11px;
+     margin-right: -5px;
+     margin-bottom: -5px;
      /* border: solid red; */
      /* width: 40px; */
      border-radius: 10px 0 10px 0;
@@ -1102,15 +1182,14 @@
  #calculate {
      border: none;
      padding: 6px 16px;
-     border-radius: 5px;
+     border-radius: 10px;
      background-color: #00865e;
      cursor: pointer;
      font-size: 10px;
      color: rgb(255, 255, 255);
      font-style: oblique;
      font-weight: 500;
-     margin: 4px 2px;
-     z-index: 2;
+     margin: 0 8px;
      opacity: 0.7;
  }
 
@@ -1118,7 +1197,7 @@
      width: 24px;
      background-color: white;
      border: solid #00865e;
-     border-radius: 5px;
+     border-radius: 7px;
  }
 
  #calculate:hover {
@@ -1134,10 +1213,11 @@
  #calc-container {
      width: 100%;
      display: flex;
-     justify-content: center;
+     /* justify-content: center; */
      /* border: solid black; */
      border-radius: 15px 0 15px 0;
-     margin-top: 4px;
+     margin: 0.5rem 0 3.5rem 0;
+     padding-left: 6px;
  }
 
  .calc-salary {
@@ -1148,9 +1228,9 @@
      align-items: center;
      border-radius: 15px 0 0 15px;
      position: relative;
-     background-image: url(./vectors/—Pngtree—digital\ technology\ blue\ geometric\ squares_2342604.png);
+     /* background-image: url(./vectors/—Pngtree—digital\ technology\ blue\ geometric\ squares_2342604.png); */
      background-position: center;
-     background-size: 100% 120%;
+     background-size: 150% 115%;
      background-repeat: no-repeat;
 
  }
@@ -1166,7 +1246,7 @@
  h6 {
      font-size: 12px;
      /* padding: 12px; */
-     margin: 0;
+     margin: 6px 10px;
  }
 
  #final-income-price {
@@ -1187,11 +1267,12 @@
      /* background-size: cover; */
      /* background-repeat: no-repeat; */
      /* border: solid black; */
+     width: 50%;
  }
 
  .calc-card {
      display: flex;
-     justify-content: space-evenly;
+     justify-content: space-between;
      border-radius: 15px;
      margin: 5px;
      padding: 5px;
@@ -1202,7 +1283,7 @@
      flex-direction: column;
      justify-content: center;
      align-items: center;
-     width: 70%;
+     /* width: 70%; */
  }
 
  .calc-icon-container {
@@ -1214,8 +1295,10 @@
  }
 
  .calc-icon {
-     width: 40px;
-     rotate: 10deg;
+     /* height: 1`rem; */
+     width: 2.5rem;
+
+     /* rotate: 20deg; */
  }
 
 
@@ -1228,6 +1311,7 @@
      background-color: white;
      /* border: solid blueviolet; */
      color: #000000;
+     width: 50%;
  }
 
  .calc-taxes {
@@ -1260,7 +1344,8 @@
      background: transparent;
      border-radius: 15px;
      margin: auto;
-     background-color: #00000022;
+     background-color: #ddd;
+     /* background-color: #00000070; */
  }
 
  .btn-home {

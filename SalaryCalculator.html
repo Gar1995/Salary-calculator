@@ -22,8 +22,8 @@
 <body>
     <div id="wrapper">
         <!-- Mobile responsive -->
-        <section id="welcome" class="">
-            <div class="intro intro-page-0 visible" id="welcome-container">
+        <section id="welcome" class="hidden">
+            <div class="intro intro-page-0 visible " id="welcome-container">
                 <img src="./vectors/Manage money-pana-pink.svg" alt="" class="intro-vector">
                 <!-- <a href="https://storyset.com/people">People illustrations by Storyset</a> -->
                 <h2>Բարև</h2>
@@ -156,7 +156,7 @@
                 <img src="./icons/angle-circle-right.png" alt="" class="navigation-icon">
             </button>
         </section>
-        <main class="hidden">
+        <main class="">
 
             <header class="">
                 <div id="user-info-container">
@@ -343,7 +343,7 @@
                             </div>
                         </div>
                         <a class="title" href="#">Առավոտյան</a>
-                        <div class="card-details image-preview">
+                        <div class="card-details-container image-preview">
                             <div>
                                 <img src="./icons/clock.png" alt="" class="card-details-icon">
                                 <span class="card-details"> 08։15-16։15</span>
@@ -353,11 +353,10 @@
                                 <span class="card-details">12.500 դր</span>
                             </div>
                         </div>
-
                         <div class="days-count-container">
                             <div class="input-container">
-                                <span class="minus bg-dark">-</span>
-                                <span class="plus bg-dark">+</span>
+                                <span class="minus">-</span>
+                                <span class="plus">+</span>
                             </div>
                             <div class="card-arrow">
                                 <svg id="arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -403,7 +402,7 @@
                         </div>
                         <a class="title" href="#">Երեկոյան</a>
 
-                        <div class="card-details image-preview">
+                        <div class="card-details-container image-preview">
                             <div>
                                 <img src="./icons/clock.png" alt="" class="card-details-icon">
                                 <span class="card-details"> 16։15-00։15</span>
@@ -416,8 +415,8 @@
 
                         <div class="days-count-container">
                             <div class="input-container">
-                                <span class="minus bg-dark">-</span>
-                                <span class="plus bg-dark">+</span>
+                                <span class="minus ">-</span>
+                                <span class="plus ">+</span>
                             </div>
                             <div class="card-arrow">
                                 <svg id="arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -462,7 +461,7 @@
                             </div>
                         </div>
                         <a class="title" href="#">Գիշերային</a>
-                        <div class="card-details image-preview">
+                        <div class="card-details-container image-preview">
                             <div>
                                 <img src="./icons/clock.png" alt="" class="card-details-icon">
                                 <span class="card-details"> 00։15-08։15</span>
@@ -474,8 +473,8 @@
                         </div>
                         <div class="days-count-container">
                             <div class="input-container">
-                                <span class="minus bg-dark">-</span>
-                                <span class="plus bg-dark">+</span>
+                                <span class="minus ">-</span>
+                                <span class="plus ">+</span>
                             </div>
                             <div class="card-arrow">
                                 <svg id="arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -486,19 +485,39 @@
                             </div>
                         </div>
                     </div>
+                    <!-- card 4 -->
+                    <div class="" id="card-4">
+                        <div class="card-head">
+                            <!-- checkbox -->
+                            <div class=" checkbox-wrapper-12">
+                                <div class="cbx">
+                                    <input id="cbx-12" type="checkbox">
+                                    <label for="cbx-12"></label>
+                                    <svg width="15" height="14" viewBox="0 0 15 14" fill="none">
+                                        <path d="M2 8.36364L6.23077 12L13 2"></path>
+                                    </svg>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <span class="more-btn-container">
+                            <img src="icons/ellipsis-v-icon.png" alt="" class="more-btn" width="8px">
+                        </span>
+                    </div>
                 </section>
                 <!-- calculation -->
                 <section id="calc-container" class="">
                     <div class="calc-salary calc-container">
                         <img src="./vectors/vector.png" alt="">
-                        <h6><span></span>ջան աշխատավարձդ կազմում է</h6>
-                        <span id="final-income-price">120000</span>
+                        <h6 class="hidden"><span id="calc-user-name"></span>ջան աշխատավարձդ կազմում է</h6>
+                        <span id="final-income-price"></span>
                     </div>
                     <div class="calc-taxes calc-container">
                         <div class="worked-days calc-card">
                             <div>
                                 <h6>Աշխատած օրեր</h6>
-                                <span id="worked-days">18</span>
+                                <span id="worked-days"></span>
                             </div>
                             <div class="calc-icon-container">
                                 <img src="./icons/calendar.png" alt="" class="calc-icon">
@@ -507,7 +526,7 @@
                         <div class="taxes calc-card">
                             <div>
                                 <h6>Պահումներ</h6>
-                                <span id="taxes">15000</span>
+                                <span id="taxes"></span>
                             </div>
                             <div class="calc-icon-container">
                                 <img src="./icons/tax.png" alt="" class="calc-icon">
@@ -516,15 +535,16 @@
                         <div class="extra-earnings calc-card">
                             <div>
                                 <h6>Հավելյալ եկամուտներ</h6>
-                                <span id="kpi">69000</span>
+                                <span id="kpi"></span>
                             </div>
                             <div class="calc-icon-container">
                                 <img src="./icons/money-bag-dollar-color-icon.png" alt="" class="calc-icon">
                             </div>
                         </div>
                     </div>
+                    <button id="calculate"><img src="./icons/calculator.svg" alt="" class="calc-icon"> Հաշվել</button>
+
                 </section>
-                <button id="calculate"><img src="./icons/calculator.svg" alt="" class="calc-icon"> Հաշվել</button>
 
             </section>
             <section class="modal hidden">
@@ -537,7 +557,7 @@
                     <input type="radio" name="manager" id="manager-3">
                     <input type="radio" name="manager" id="manager-4">
                     <input type="radio" name="manager" id="manager-5">
-                    <button class="butn">Լավ</button>
+                    <button class="butn btn">Լավ</button>
                 </div>
                 <div class="overlay hidden"></div>
             </section>
